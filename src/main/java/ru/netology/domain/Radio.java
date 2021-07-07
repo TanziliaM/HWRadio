@@ -8,51 +8,17 @@ public class Radio {
     private int currentVolume;
     private int maxVolume = 10;
     private int minVolume = 0;
-    private boolean next;
-    private boolean prev;
-    private boolean plus;
-    private boolean minus;
+
 
     public int getCurrentVolume() {
+
         return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
+
         this.currentVolume = currentVolume;
     }
-
-    public boolean isPlus() {
-        return plus;
-    }
-
-    public void setPlus(boolean plus) {
-        this.plus = plus;
-    }
-
-    public boolean isMinus() {
-        return minus;
-    }
-
-    public void setMinus(boolean minus) {
-        this.minus = minus;
-    }
-
-    public boolean isNext() {
-        return next;
-    }
-
-    public void setNext(boolean next) {
-        this.next = next;
-    }
-
-    public boolean isPrev() {
-        return prev;
-    }
-
-    public void setPrev(boolean prev) {
-        this.prev = prev;
-    }
-
 
     public void changeNextRadioStation() {
         currentRadioStation++;
@@ -101,8 +67,13 @@ public class Radio {
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation > maxRadioStation) {
+            return;
+        }
+        if (currentRadioStation < minRadioStation) {
+            return;
+        }
         this.currentRadioStation = currentRadioStation;
-        return;
     }
 
 
