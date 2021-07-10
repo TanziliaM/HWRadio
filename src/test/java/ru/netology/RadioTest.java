@@ -9,9 +9,9 @@ public class RadioTest {
     @Test
     void shouldUpStation() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(9);
-        radio.changeNextRadioStation();
         radio.setCurrentRadioStation(10);
+        radio.changeNextRadioStation();
+        radio.setCurrentRadioStation(11);
         assertEquals(0, radio.getCurrentRadioStation());
 
         radio.setCurrentRadioStation(3);
@@ -25,7 +25,7 @@ public class RadioTest {
         radio.setCurrentRadioStation(0);
         radio.changePrevRadioStation();
         radio.setCurrentRadioStation(-1);
-        assertEquals(9, radio.getCurrentRadioStation());
+        assertEquals(10, radio.getCurrentRadioStation());
 
         radio.setCurrentRadioStation(6);
         radio.changePrevRadioStation();
@@ -39,9 +39,9 @@ public class RadioTest {
         radio.volumeUp();
         assertEquals(9, radio.getCurrentVolume());
 
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.volumeUp();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
